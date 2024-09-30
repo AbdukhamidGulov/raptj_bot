@@ -1,5 +1,7 @@
-SQLALCHEMY_DATABASE_URI = 'postgresql+asyncpg://myuser:00002@127.0.0.1:5432/mydatabase'
+from os import getenv
+from dotenv import load_dotenv
 
-API_TOKEN = "6864397174:AAGwnabaqSMNKR6aUYVG8HvgrTqBIl8kOxU"
+load_dotenv()
 
-# НУЖНО СОЗДАТЬ ФАЙЛ .inv - или как его
+SQLALCHEMY_DATABASE_URI = getenv("SQLALCHEMY_DATABASE_URI")
+API_TOKEN = getenv("API_TOKEN")
